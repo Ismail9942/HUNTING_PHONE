@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hunting Phone</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <main class="container mx-auto p-10">
+      <div class="mx-auto text-center bg-slate-300 p-4 m-8">
+        <input
+          type="text"
+          id="search-field"
+          placeholder="Search"
+          class="input input-bordered w-full max-w-xs"
+        />
+        <button onclick="handleSearch()" class="btn btn-success">Search</button>
+      </div>
+      <!-- Loading div -->
+      <div id="loading-spinner" class="text-center my-40 hidden">
+        <span class="loading loading-spinner loading-lg"></span>
+      </div>
+      <div
+        id="phone-container"
+        class="grid grid-cols gap-2 md:grid-cols-2 lg:grid-cols-3"
+      >
+        <!-- card starts -->
+        <!-- <div class="card bg-gray-100 shadow-xl">
+          <figure class="px-10 pt-10">
+            <img
+              src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+              alt="Shoes"
+              class="rounded-xl"
+            />
+          </figure>
+          <div class="card-body items-center text-center">
+            <h2 class="card-title">Shoes!</h2>
+            <p>If a dog chews shoes whose shoes does he choose?</p>
+            <div class="card-actions">
+              <button class="btn btn-primary">Buy Now</button>
+            </div>
+          </div>
+        </div> -->
+        <!-- card ends -->
+      </div>
+      <div id="show-all" class="hidden text-center my-10">
+        <button onclick="handleShowAll()" class="btn btn-success">
+          Show All
+        </button>
+      </div>
+      <!-- modal starts -->
+      <div class="text-center">
+        <!-- Open the modal using ID.showModal() method -->
+
+        <dialog
+          id="show_detail_modal"
+          class="modal modal-bottom sm:modal-middle"
+        >
+          <div class="modal-box">
+            <h3
+              id="show-phone-name"
+              class="text-3xl font-bold text-center mb-4"
+            ></h3>
+            <div
+              id="show-details-container"
+              class="flex flex-col justify-center items-center gap-4"
+            ></div>
+            <div class="modal-action">
+              <form method="dialog">
+                <!-- if there is a button in form, it will close the modal -->
+                <button class="btn">Close</button>
+              </form>
+            </div>
+          </div>
+        </dialog>
+      </div>
+    </main>
+    <script src="js/phone.js"></script>
+  </body>
+</html>
